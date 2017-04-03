@@ -39,3 +39,53 @@
     color: #f1f1f1;
   }
 }
+
+
+// sidebar status
+.sidebarStatus {
+  float: right;
+  border-radius: 15px;
+  cursor: pointer;
+  color: beige;
+  box-shadow: 0px 0px 14px -1px rgba(0,0,0,0.16);
+  background-color: #f1495b;
+  padding: 0px 15px 0px 15px;
+
+}
+
+.flip-container {
+  perspective : 1000px;
+  float: right;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+#sidebar a:hover .flipper, #sidebar a.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+
+.flipper {
+  float: right;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+}
+
+.front ,.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.front {
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+}
+.back {
+  left: 6px;
+  position: absolute;
+  transform: rotateY(180deg);
+}
