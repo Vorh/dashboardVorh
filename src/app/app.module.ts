@@ -6,19 +6,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {SideBarComponent} from './components/sideBar/sideBar.component';
-import {TodoListComponent} from './components/todoList/todoList.component';
-import {HeaderTodoComponent} from './components/todoList/headerTodo/headerTodo.component';
-import {PanelTodoComponent} from './components/todoList/panelTodo/panelTodo.component';
+import {SideBar} from './components/sideBar/sideBar.component';
+import {TodoList} from './components/todoList/todoList.component';
+import {HeaderTodo} from './components/todoList/headerTodo/headerTodo.component';
+import {PanelTodo} from './components/todoList/panelTodo/panelTodo.component';
 import {TodoServiceBasic} from './services/todoService/todoServiceBasic.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent,
-    TodoListComponent,
-    HeaderTodoComponent,
-    PanelTodoComponent
+    SideBar,
+    TodoList,
+    HeaderTodo,
+    PanelTodo
   ],
   imports: [
     BrowserModule,

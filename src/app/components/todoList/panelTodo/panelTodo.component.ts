@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './panelTodo.component.html',
   styleUrls: ['./panelTodo.component.scss']
 })
-export class PanelTodoComponent implements OnInit {
+export class PanelTodo implements OnInit {
   title = 'TEST';
 
   constructor() { }

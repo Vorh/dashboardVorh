@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './todoList.component.html',
   styleUrls: ['./todoList.component.css']
 })
-export class TodoListComponent implements OnInit {
+export class TodoList implements OnInit {
 
   constructor() { }
 

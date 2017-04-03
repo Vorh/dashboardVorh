@@ -5,9 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './headerTodo.component.html',
   styleUrls: ['./headerTodo.component.scss']
 })
-export class HeaderTodoComponent implements OnInit {
-  title = 'Header'
-
+export class HeaderTodo implements OnInit {
+  title = 'Header';
 
   constructor() { }
 
