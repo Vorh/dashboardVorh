@@ -2,4 +2,71 @@
   width: 100%;
   height: 50px;
   background-color: #9fbdd7;
+
+  .main {
+    width: 170px;
+    height: 90px;
+    background-color: #ebf1f5;
+    float: left;
+    font-size: 20px;
+    color: #5b6a7d;
+    font-weight: 600;
+  }
+
+  .value {
+    margin-top: 30px;
+    float: left;
+
+  }
+
+  .thermometer {
+    margin-left: 25px;
+  }
+
+  .caption {
+    font-size: 12px;
+  }
+
+  .thermometerCaption {
+    position: absolute;
+    top: 65px;
+    left: 35px;
+  }
+
+  .volutes {
+    margin-left: 10px;
+  }
+
+  .volutesCaption {
+    position: absolute;
+    top: 65px;
+    left: 230px;
+  }
+
+  .clock {
+    margin-left: 18px;
+  }
+
+  .clockCaption {
+    position: absolute;
+    top: 65px;
+    left: 400px;
+  }
+
+  .main i {
+    margin-left: 15px;
+    margin-top: 24px;
+  }
+
+  .vertical-line {
+    float: right;
+    width: 1px;
+    margin-top: 10px;
+    height: 70px;
+    border-right: 2px solid #b5e6f3;
+    border-radius: 2px;
+  }
+  .container {
+    width: 600px;
+  }
 }
