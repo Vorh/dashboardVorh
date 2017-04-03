@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class DashboardVorhPage {
+export class dbdFrontendPage {
   navigateTo() {
     return browser.get('/');
   }

@@ -1,10 +1,10 @@
-import { DashboardVorhPage } from './app.po';
+import { dbdFrontendPage } from './app.po';
 
-describe('dashboard-vorh App', function() {
-  let page: DashboardVorhPage;
+describe('dbd-frontend App', function() {
+  let page: dbdFrontendPage;
 
   beforeEach(() => {
-    page = new DashboardVorhPage();
+    page = new dbdFrontendPage();
   });
 
   it('should display message saying app works', () => {
