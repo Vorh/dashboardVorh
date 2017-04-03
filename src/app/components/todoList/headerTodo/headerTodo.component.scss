@@ -1,3 +1,8 @@
+
+@mixin left($left){
+  left: $left + 200px;
+}
+
 #headerTodo {
   width: 100%;
   height: 50px;
@@ -30,7 +35,8 @@
   .thermometerCaption {
     position: absolute;
     top: 65px;
-    left: 35px;
+    @include left(35)
+
   }
 
   .volutes {
@@ -40,7 +46,8 @@
   .volutesCaption {
     position: absolute;
     top: 65px;
-    left: 230px;
+    @include left(230)
+
   }
 
   .clock {
@@ -50,7 +57,7 @@
   .clockCaption {
     position: absolute;
     top: 65px;
-    left: 400px;
+    @include left(400)
   }
 
   .main i {
@@ -70,3 +77,6 @@
     width: 600px;
   }
 }
+
+
+
