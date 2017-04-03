@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Todo} from '../../models/todo';
 import 'rxjs/add/operator/toPromise';
-import {TodoServiceService} from './todoService.interface';
 import {AppSetting} from '../../app.setting';
+import {TodoService} from "./todoService";
 @Injectable()
-export class TodoServiceBasic implements TodoServiceService {
+export class TodoServiceBasic implements TodoService {
 
 
   constructor(private http: Http) {

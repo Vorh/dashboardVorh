@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header-todo',
-  templateUrl: './header-todo.component.html',
-  styleUrls: ['./header-todo.component.scss']
+  templateUrl: './headerTodo.component.html',
+  styleUrls: ['./headerTodo.component.scss']
 })
 export class HeaderTodoComponent implements OnInit {
   title = 'Header'
