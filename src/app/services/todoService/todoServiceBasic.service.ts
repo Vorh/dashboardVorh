@@ -4,16 +4,16 @@ import {Todo} from '../../models/todo';
 import 'rxjs/add/operator/toPromise';
 import {AppSetting} from '../../app.setting';
 import {TodoService} from "./todoService";
+
+
 @Injectable()
 export class TodoServiceBasic implements TodoService {
-
 
   constructor(private http: Http) {
   }
 
-
   getListToDo(): Promise<Todo[]> {
-    return this.http.get(AppSetting.URL + '/getTodoList')
+    return this.http.get(AppSetting.URL + '/todo/list')
       .toPromise()
       .then(response => {
         const any = response.json();

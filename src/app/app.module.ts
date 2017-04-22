@@ -1,5 +1,3 @@
-///<reference path="components/sideBar/sideBar.component.ts"/>
-///<reference path="components/todoList/headerTodo/headerTodo.component.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';

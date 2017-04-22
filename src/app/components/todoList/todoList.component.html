@@ -1,9 +1,10 @@
 <div id="addToDo">
-  <button><i class="fa fa-plus fa-1x" aria-hidden="true"></i></button>
+  <button><i class="fa fa-plus fa-1x" aria-hidden="true" (click)="addTodo()" ></i></button>
   <input placeholder="Text todo">
 </div>
 <ul class="toDoList">
-  <li>
+
+  <li *ngFor="let item of todoList">
     <div class="todo">
       <input id="checkbox-3" class="checkbox-custom" name="checkbox-3" type="checkbox">
       <label for="checkbox-3" class="checkbox-custom-label"></label>

@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-
+import {Http,Response} from "@angular/http";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import {Todo} from "../../models/todo";
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todoList.component.html',
@@ -7,11 +10,17 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TodoList implements OnInit {
 
-  constructor() {
+  todoLis: Todo[];
+
+  constructor(private http: Http) {
   }
 
   ngOnInit() {
   }
+
+ addTodo(){
+ }
+
 
   openTodo(id, toggle) {
     let element = document.getElementById(id);
