@@ -8,7 +8,7 @@ import {SideBar} from './components/sideBar/sideBar.component';
 import {TodoList} from './components/todoList/todoList.component';
 import {HeaderTodo} from './components/todoList/headerTodo/headerTodo.component';
 import {PanelTodo} from './components/todoList/panelTodo/panelTodo.component';
-import {TodoServiceBasic} from './services/todoService/todoServiceBasic.service';
+import {TodoService} from './services/todoService/todoServiceBasic.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import {TodoServiceBasic} from './services/todoService/todoServiceBasic.service'
     FormsModule,
     HttpModule
   ],
-  providers: [TodoServiceBasic],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

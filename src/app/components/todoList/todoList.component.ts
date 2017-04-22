@@ -3,6 +3,7 @@ import {Http,Response} from "@angular/http";
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Todo} from "../../models/todo";
+import {TodoService} from "../../services/todoService/todoServiceBasic.service";
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todoList.component.html',
@@ -10,9 +11,10 @@ import {Todo} from "../../models/todo";
 })
 export class TodoList implements OnInit {
 
-  todoLis: Todo[];
+  todoList: Observable<Todo[]>;
 
-  constructor(private http: Http) {
+  constructor(todoService: TodoService) {
+    this.todoList = todoService.getListToDo();
   }
 
   ngOnInit() {

@@ -1,39 +1,55 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http,Response} from '@angular/http';
 import {Todo} from '../../models/todo';
 import 'rxjs/add/operator/toPromise';
 import {AppSetting} from '../../app.setting';
-import {TodoService} from "./todoService";
-
+import {Observable} from "rxjs";
+import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class TodoServiceBasic implements TodoService {
+export class TodoService {
 
   constructor(private http: Http) {
   }
 
-  getListToDo(): Promise<Todo[]> {
+
+  // getListToDo(): Promise<Todo[]> {
+  //   return this.http.get(AppSetting.URL + '/todo/list')
+  //     .toPromise()
+  //     .then(response => {
+  //       const any = response.json();
+  //       const deeds: Todo[] = [];
+  //       console.log(any.length);
+  //       for (let i = 0; i < any.length; i++) {
+  //
+  //         const counter = any[i];
+  //         const tempTodo = new Todo();
+  //         tempTodo.title = counter.title;
+  //         tempTodo.id = counter.id;
+  //         tempTodo.complete = counter.complete;
+  //         console.log(tempTodo.complete);
+  //
+  //         deeds[i] = tempTodo;
+  //       }
+  //       return deeds;
+  //     });
+  // }
+
+  getListToDo(): Observable<Todo[]> {
+
     return this.http.get(AppSetting.URL + '/todo/list')
-      .toPromise()
-      .then(response => {
-        const any = response.json();
-        const deeds: Todo[] = [];
-        console.log(any.length);
-        for (let i = 0; i < any.length; i++) {
+      .map(this.extractTodo);
 
-          const counter = any[i];
-          const tempTodo = new Todo();
-          tempTodo.title = counter.title;
-          tempTodo.id = counter.id;
-          tempTodo.complete = counter.complete;
-          console.log(tempTodo.complete);
 
-          deeds[i] = tempTodo;
-        }
-        return deeds;
-      });
   }
 
+
+  private extractTodo(res: Response){
+    alert("EXTRACT");
+    let body =res.json();
+    alert(body);
+    return body.data || {};
+  }
 
   addToDo(todo: Todo) {
 
