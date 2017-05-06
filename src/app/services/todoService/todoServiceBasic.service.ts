@@ -13,42 +13,23 @@ export class TodoService {
   }
 
 
-  // getListToDo(): Promise<Todo[]> {
-  //   return this.http.get(AppSetting.URL + '/todo/list')
-  //     .toPromise()
-  //     .then(response => {
-  //       const any = response.json();
-  //       const deeds: Todo[] = [];
-  //       console.log(any.length);
-  //       for (let i = 0; i < any.length; i++) {
-  //
-  //         const counter = any[i];
-  //         const tempTodo = new Todo();
-  //         tempTodo.title = counter.title;
-  //         tempTodo.id = counter.id;
-  //         tempTodo.complete = counter.complete;
-  //         console.log(tempTodo.complete);
-  //
-  //         deeds[i] = tempTodo;
-  //       }
-  //       return deeds;
-  //     });
-  // }
-
   getListToDo(): Observable<Todo[]> {
-
     return this.http.get(AppSetting.URL + '/todo/list')
-      .map(this.extractTodo);
-
-
-  }
-
-
-  private extractTodo(res: Response){
-    alert("EXTRACT");
-    let body =res.json();
-    alert(body);
-    return body.data || {};
+      .map(response => {
+        const any = response.json();
+        const deeds: Todo[] = [];
+        console.log(any.length);
+        for (let i = 0; i < any.length; i++) {
+          const counter = any[i];
+          const tempTodo = new Todo();
+          tempTodo.title = counter.caption;
+          tempTodo.id = counter.id;
+          tempTodo.complete = counter.complete;
+          console.log(tempTodo.complete);
+          deeds[i] = tempTodo;
+        }
+        return deeds;
+      });
   }
 
   addToDo(todo: Todo) {
