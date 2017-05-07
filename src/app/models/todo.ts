@@ -1,18 +1,27 @@
-import {Tag} from "./tag";
 export class Todo {
   private _id: number;
-  private _title: string;
+  private _caption: string;
   private _text: string;
   private _complete: boolean;
-  private _tags: Tag[];
+  private _type: number;
+  private _date: number;
 
 
-  get tags(): Tag[] {
-    return this._tags;
+  get date(): number {
+    return this._date;
   }
 
-  set tags(value: Tag[]) {
-    this._tags = value;
+  set date(value: number) {
+    this._date = value;
+  }
+
+
+  get type(): number {
+    return this._type;
+  }
+
+  set type(value: number) {
+    this._type = value;
   }
 
   get id(): number {
@@ -23,12 +32,12 @@ export class Todo {
     this._id = value;
   }
 
-  get title(): string {
-    return this._title;
+  get caption(): string {
+    return this._caption;
   }
 
-  set title(value: string) {
-    this._title = value;
+  set caption(value: string) {
+    this._caption = value;
   }
 
   get text(): string {

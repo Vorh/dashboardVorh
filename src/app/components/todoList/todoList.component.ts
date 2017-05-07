@@ -12,19 +12,28 @@ import {AppSetting} from "../../app.setting";
 })
 export class TodoList implements OnInit {
 
-  todoList: Observable<Todo[]>;
+  todoList: Todo[];
 
   constructor(private todoService: TodoService, private  http: Http) {
   }
 
   ngOnInit() {
-    this.todoList= this.todoService.getListToDo();
-
+     this.todoService.getListToDo().subscribe(item=>{
+       this.todoList = item;
+     });
   }
 
   addTodo() {
   }
 
+  removeTodo(todo:Todo ){
+    let index = this.todoList.indexOf(todo, 0);
+    if (index > -1) {
+      this.todoList.splice(index, 1);
+    }
+
+    this.todoService.removeTodo(todo);
+  }
 
   openTodo(id, toggle) {
     let element = document.getElementById(id);
@@ -40,6 +49,35 @@ export class TodoList implements OnInit {
       toggle.remove('fa-chevron-down');
       toggle.add('fa-chevron-up');
     }
+  }
+
+  getTime(date:number): String{
+    let value = new Date(date);
+    return value.toDateString();
+  }
+
+
+  getClassForLabel(date:number):String{
+    let currentDate = new Date();
+    if (date < currentDate.getTime()){
+      return "statusImportant";
+    }else {
+      return "statusDayLeft";
+    }
+  }
+
+  completeTodo(todo: Todo){
+    let todoDiv = document.getElementById('todo-'+todo.id);
+    let checkbox = <HTMLInputElement> document.getElementById('checkbox-' +todo.id);
+    let span = todoDiv.getElementsByTagName("span");
+    if (checkbox.checked){
+      todo.complete = true;
+      span.item(0).className += "todo-complete";
+    }else {
+      todo.complete = false;
+      span.item(0).className = "";
+    }
+    this.todoService.updateTodo(todo);
   }
 
 }

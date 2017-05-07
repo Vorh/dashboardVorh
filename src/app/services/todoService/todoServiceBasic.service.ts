@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http,Response} from '@angular/http';
+import {Http, RequestMethod, RequestOptions, Headers} from '@angular/http';
 import {Todo} from '../../models/todo';
 import 'rxjs/add/operator/toPromise';
 import {AppSetting} from '../../app.setting';
@@ -18,14 +18,15 @@ export class TodoService {
       .map(response => {
         const any = response.json();
         const deeds: Todo[] = [];
-        console.log(any.length);
         for (let i = 0; i < any.length; i++) {
-          const counter = any[i];
+          const temp = any[i];
+
           const tempTodo = new Todo();
-          tempTodo.title = counter.caption;
-          tempTodo.id = counter.id;
-          tempTodo.complete = counter.complete;
-          console.log(tempTodo.complete);
+          tempTodo.caption = temp.caption;
+          tempTodo.id = temp.id;
+          tempTodo.complete = temp.complete;
+          tempTodo.type = temp.type;
+          tempTodo.date = temp.date;
           deeds[i] = tempTodo;
         }
         return deeds;
@@ -37,11 +38,26 @@ export class TodoService {
   }
 
   removeTodo(todo: Todo) {
-
+    this.http.get(AppSetting.URL + '/todo/remove/' + todo.id).subscribe();
   }
 
   updateTodo(todo: Todo) {
+    let url = AppSetting.URL + '/todo/update/';
+    let header = new Headers();
+    header.append("Accept","application/json");
+    header.append("Content-Type","application/json");
 
+    let tempJson = JSON.stringify(todo);
+    tempJson=tempJson.replace(/_/g,"");
+    let request = new RequestOptions({
+      method: RequestMethod.Post,
+      url: url,
+      headers: header,
+      body: tempJson
+    });
+    this.http.request(url,request).subscribe();
+
+    alert(tempJson);
   }
 
 }

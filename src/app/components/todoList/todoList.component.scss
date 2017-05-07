@@ -177,3 +177,24 @@
   font-size: 15px;
 }
 
+.todo-complete {
+  text-decoration: line-through;
+}
+
+.btn-remove {
+  float: right;
+  border: none;
+  width: 35px;
+  height: 30px;
+  box-shadow: 0px 1px 4px 0px;
+  background: #607D8B;
+  margin: 0;
+  cursor:pointer;
+  opacity: 0.3;
+}
+.btn-remove:hover{
+  background: #78909C;
+  opacity: 1;
+}
+
+
