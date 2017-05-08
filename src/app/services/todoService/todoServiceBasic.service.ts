@@ -34,7 +34,19 @@ export class TodoService {
   }
 
   addToDo(todo: Todo) {
+    let url = AppSetting.URL + '/todo/add/';
+    let header = new Headers();
+    header.append("Accept","application/json");
+    header.append("Content-Type","application/json");
 
+    let request = new RequestOptions({
+      method: RequestMethod.Post,
+      url: url,
+      headers: header,
+      body: this.formatterTodo(todo)
+    });
+    console.log(this.formatterTodo(todo));
+    this.http.request(url,request).subscribe()
   }
 
   removeTodo(todo: Todo) {
@@ -56,6 +68,13 @@ export class TodoService {
       body: tempJson
     });
     this.http.request(url,request).subscribe();
+    console.log(tempJson);
+  }
+
+
+  formatterTodo(todo:Todo):String{
+    let tempJson = JSON.stringify(todo);
+    return tempJson.replace(/_/g,"");
   }
 
 }

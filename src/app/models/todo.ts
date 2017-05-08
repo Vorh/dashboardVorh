@@ -1,7 +1,7 @@
 export class Todo {
   private _id: number;
   private _caption: string;
-  private _text: string;
+  private _content: string;
   private _complete: boolean;
   private _type: number;
   private _date: number;
@@ -40,12 +40,12 @@ export class Todo {
     this._caption = value;
   }
 
-  get text(): string {
-    return this._text;
+  get content(): string {
+    return this._content;
   }
 
-  set text(value: string) {
-    this._text = value;
+  set content(value: string) {
+    this._content = value;
   }
 
   get complete(): boolean {

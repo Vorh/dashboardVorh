@@ -2,13 +2,13 @@
 <div id="modalAddTodo" class="modal">
   <div class="modal-content">
     <span (click)="setVisibleModal(false)" class="close fa fa-window-close"></span>
-    <input class="input" type="text" placeholder="Input todo">
+    <input [(ngModel)]= "caption" class="input" type="text" placeholder="Input todo">
     <select class="combo-box" [(ngModel)]="type">
       <option [ngValue]="1">Every day</option>
       <option [ngValue]="2">Note</option>
       <option [ngValue]="3">By date</option>
     </select>
-    <button class="btn-add-todo fa-plus"><span>Create</span></button>
+    <button (click)="addTodo()" class="btn-add-todo fa-plus"><span>Create</span></button>
   </div>
 </div>
 

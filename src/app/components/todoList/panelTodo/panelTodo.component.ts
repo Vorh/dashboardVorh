@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Todo} from "../../../models/todo";
 
 @Component({
   selector: 'panel-todo',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panelTodo.component.scss']
 })
 export class PanelTodo implements OnInit {
+
+  @Input() todoList: Todo[];
 
   constructor() { }
 
