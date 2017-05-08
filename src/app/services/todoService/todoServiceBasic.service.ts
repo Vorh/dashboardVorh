@@ -56,8 +56,6 @@ export class TodoService {
       body: tempJson
     });
     this.http.request(url,request).subscribe();
-
-    alert(tempJson);
   }
 
 }

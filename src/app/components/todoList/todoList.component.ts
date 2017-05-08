@@ -23,8 +23,6 @@ export class TodoList implements OnInit {
      });
   }
 
-  addTodo() {
-  }
 
   removeTodo(todo:Todo ){
     let index = this.todoList.indexOf(todo, 0);

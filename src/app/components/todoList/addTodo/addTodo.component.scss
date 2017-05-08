@@ -1,0 +1,77 @@
+#btnOpenModal {
+  background: #7c8aa6;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 19px;
+  padding: 12px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px #000000;
+}
+
+#btnOpenModal:hover {
+  background: #3cb0fd;
+}
+.input {
+  height: 25px;
+  padding: 3px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #3c5c6d;
+}
+.combo-box{
+  height: 35px;
+  background: rgb(149, 189, 247);
+  border: none;
+  font-size: 14px;
+}
+.btn-add-todo {
+  height: 35px;
+  width: 75px;
+  border: none;
+  cursor: pointer;
+  background: #01579B;
+  transition: 0.5s;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+  }
+}
+.btn-add-todo:hover{
+  box-shadow: 0px 0px 3px 0px;;
+  background: #0288D1;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  background: rgba(96, 125, 139, 0.7);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  cursor: pointer;
+  position: relative;
+
+
+}

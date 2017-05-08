@@ -9,6 +9,7 @@ import {TodoList} from './components/todoList/todoList.component';
 import {HeaderTodo} from './components/todoList/headerTodo/headerTodo.component';
 import {PanelTodo} from './components/todoList/panelTodo/panelTodo.component';
 import {TodoService} from './services/todoService/todoServiceBasic.service';
+import {AddTodo} from "./components/todoList/addTodo/addTodo.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {TodoService} from './services/todoService/todoServiceBasic.service';
     SideBar,
     TodoList,
     HeaderTodo,
-    PanelTodo
+    PanelTodo,
+    AddTodo
   ],
   imports: [
     BrowserModule,
