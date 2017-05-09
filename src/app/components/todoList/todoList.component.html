@@ -2,14 +2,17 @@
   <panel-todo [todoList]="todoList"></panel-todo>
 </div>
 <ul class="toDoList">
-  <li *ngFor="let todo of todoList">
+  <li *ngFor="let todo of todoList" [class.selected]="todo.select" (focus)="selectTodo(todo)" (blur)="blurTodo(todo)"
+      tabindex="1">
     <div class="todo" id="todo-{{todo.id}}">
-      <input [checked]="todo.complete" id="checkbox-{{todo.id}}" (click)="completeTodo(todo);" class="checkbox-custom" type="checkbox">
-      <label  for="checkbox-{{todo.id}}" class="checkbox-custom-label"></label>
-      <span [ngClass]="{'todo-complete': todo.complete}">{{todo.caption}}</span>
-      <button  (click)="removeTodo(todo)" class="btn-remove fa fa-remove "></button>
+      <input [checked]="todo.complete" id="checkbox-{{todo.id}}" (click)="completeTodo(todo)" class="checkbox-custom"
+             type="checkbox">
+      <label for="checkbox-{{todo.id}}" class="checkbox-custom-label"></label>
+      <input disabled [(ngModel)]="todo.caption" maxlength="250" type="text"
+             [ngClass]="{'todo-complete': todo.complete}"/>
+      <button (click)="removeTodo(todo)" class="btn-remove fa fa-remove "></button>
       <div *ngIf="todo.type == 1" class="statusEveryday">Everyday</div>
-      <div *ngIf="todo.type == 2" class={{getClassForLabel(todo.date)}}>{{getTime(todo.date)}}</div>
+      <div *ngIf="todo.type == 2" [ngClass]="getClassForLabel(todo.date)"> {{getTime(todo.date)}}</div>
       <!--<div class="statusImportant">1 day left</div>-->
     </div>
   </li>

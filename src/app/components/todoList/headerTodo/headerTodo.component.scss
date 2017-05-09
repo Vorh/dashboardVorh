@@ -9,16 +9,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  .main {
-    width: 170px;
-    height: 90px;
-    float: left;
-    font-size: 20px;
-    color: #5b6a7d;
-    font-weight: 600;
-  }
+
 
   .logo {
+    float: left;
     font-size: 30px;
     font-weight: 400;
     color: #63aac7;
@@ -31,64 +25,12 @@
   }
 
 
-  .value {
-    margin-top: 30px;
-    float: left;
-
-  }
-
-  .thermometer {
-    margin-left: 25px;
-  }
-
-  .caption {
-    font-size: 12px;
-  }
-
-  .thermometerCaption {
-    position: absolute;
-    top: 65px;
-    @include left(35)
-
-  }
-
-  .volutes {
-    margin-left: 10px;
-  }
-
-  .volutesCaption {
-    position: absolute;
-    top: 65px;
-    @include left(230)
-
-  }
-
   .clock {
-    margin-left: 18px;
+    float: left;
+    display: block;
   }
 
-  .clockCaption {
-    position: absolute;
-    top: 65px;
-    @include left(400)
-  }
 
-  .main i {
-    margin-left: 15px;
-    margin-top: 24px;
-  }
-
-  .vertical-line {
-    float: right;
-    width: 1px;
-    margin-top: 10px;
-    height: 70px;
-    border-right: 2px solid #b5e6f3;
-    border-radius: 2px;
-  }
-  .container {
-    width: 600px;
-  }
 }
 
 

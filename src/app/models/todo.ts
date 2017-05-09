@@ -5,7 +5,16 @@ export class Todo {
   private _complete: boolean;
   private _type: number;
   private _date: number;
+  private _select:boolean;
 
+
+  get select(): boolean {
+    return this._select;
+  }
+
+  set select(value: boolean) {
+    this._select = value;
+  }
 
   get date(): number {
     return this._date;

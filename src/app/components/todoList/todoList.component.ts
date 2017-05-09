@@ -14,7 +14,7 @@ export class TodoList implements OnInit {
 
   todoList: Todo[];
 
-  constructor(private todoService: TodoService, private  http: Http) {
+  constructor(private todoService: TodoService ) {
   }
 
   ngOnInit() {
@@ -64,18 +64,32 @@ export class TodoList implements OnInit {
     }
   }
 
+  updateTodo(todo:Todo){
+    alert(todo);
+    // this.todoService.updateTodo(todo);
+  }
+
+  selectTodo(todo:Todo){
+    todo.select =  true;
+  }
+
+  blurTodo(todo:Todo){
+    todo.select = false;
+  }
+
   completeTodo(todo: Todo){
     let todoDiv = document.getElementById('todo-'+todo.id);
     let checkbox = <HTMLInputElement> document.getElementById('checkbox-' +todo.id);
-    let span = todoDiv.getElementsByTagName("span");
+    let span = todoDiv.getElementsByTagName("input");
     if (checkbox.checked){
       todo.complete = true;
-      span.item(0).className += "todo-complete";
+      span.item(1).className += "todo-complete";
     }else {
       todo.complete = false;
-      span.item(0).className = "";
+      span.item(1).className = "";
     }
     this.todoService.updateTodo(todo);
+
   }
 
 }
