@@ -14,17 +14,17 @@ export class TodoList implements OnInit {
 
   todoList: Todo[];
 
-  constructor(private todoService: TodoService ) {
+  constructor(private todoService: TodoService) {
   }
 
   ngOnInit() {
-     this.todoService.getListToDo().subscribe(item=>{
-       this.todoList = item;
-     });
+    this.todoService.getListToDo().subscribe(item => {
+      this.todoList = item;
+    });
   }
 
 
-  removeTodo(todo:Todo ){
+  removeTodo(todo: Todo) {
     let index = this.todoList.indexOf(todo, 0);
     if (index > -1) {
       this.todoList.splice(index, 1);
@@ -49,31 +49,43 @@ export class TodoList implements OnInit {
     }
   }
 
-  getTime(date:number): String{
+  getTime(date: number): String {
     let value = new Date(date);
     return value.toDateString();
   }
 
 
-  getClassForLabel(date:number):String{
+  getClassForLabel(date: number): String {
     let currentDate = new Date();
-    if (date < currentDate.getTime()){
+    if (date < currentDate.getTime()) {
       return "statusImportant";
-    }else {
+    } else {
       return "statusDayLeft";
     }
   }
 
-  updateTodo(todo:Todo){
-    this.todoService.updateTodo(todo);
+  updateTodo(todo: Todo) {
+    alert(todo);
+    // this.todoService.updateTodo(todo);
   }
 
-  selectTodo(todo:Todo){
-    todo.select =  true;
+  selectTodo(todo: Todo) {
+    todo.select = true;
   }
 
-  blurTodo(todo:Todo){
+  blurTodo(todo: Todo) {
     todo.select = false;
+  }
+
+  completeTodo(todo: Todo) {
+    let checkbox = <HTMLInputElement> document.getElementById('checkbox-' + todo.id);
+    if (checkbox.checked) {
+      todo.complete = true;
+    } else {
+      todo.complete = false;
+    }
+    this.todoService.updateTodo(todo);
+
   }
 
 }

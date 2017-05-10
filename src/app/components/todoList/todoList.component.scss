@@ -16,6 +16,7 @@
 
     &.todo-complete {
       text-decoration: line-through;
+
     }
 
     &.edit {
@@ -39,6 +40,9 @@
   .selected {
     background: #a6d4da;
     outline:none;
+    input {
+      background: #a6d4da;
+    }
   }
 }
 
