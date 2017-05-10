@@ -9,7 +9,7 @@
           [(ngModel)]="todo.complete" type="checkbox" (click)="completeTodo(todo)">
     <label for="checkbox-{{todo.id}}" ><span class="checkbox"></span> </label>
     </div>
-    <div class="todo" tabindex="1" id="todo-{{todo.id}}" [class.selected]="todo.select" (focus)="selectTodo(todo)" (blur)="blurTodo(todo)">
+    <div  class="todo" tabindex="1" id="todo-{{todo.id}}" [class.selected]="todo.select" (focus)="selectTodo(todo)" (blur)="blurTodo(todo)">
       <input disabled [(ngModel)]="todo.caption" maxlength="250" type="text"
              [class.todo-complete]="todo.complete"/>
       <button (click)="removeTodo(todo)" class="btn-remove fa fa-remove "></button>

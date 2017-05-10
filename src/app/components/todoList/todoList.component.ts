@@ -19,7 +19,12 @@ export class TodoList implements OnInit {
 
   ngOnInit() {
     this.todoService.getListToDo().subscribe(item => {
-      this.todoList = item;
+      let sort = item.sort((a, b) => {
+        if (a.date > b.date) return-1;
+        if (a.date < b.date) return 1;
+        return 0;
+      });
+      this.todoList = sort;
     });
   }
 
@@ -85,7 +90,6 @@ export class TodoList implements OnInit {
       todo.complete = false;
     }
     this.todoService.updateTodo(todo);
-
   }
 
 }
