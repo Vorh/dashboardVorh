@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Todo} from "../../models/todo";
-import {TodoService} from "../../services/todoService/todoServiceBasic.service";
-import {AppSetting} from "../../app.setting";
+import {Todo} from "../../../models/todo";
+import {TodoService} from "../../../services/todoService/todoServiceBasic.service";
+import {AppSetting} from "../../../app.setting";
 @Component({
-  selector: 'app-todo-list',
+  selector: 'todo-list',
   templateUrl: './todoList.component.html',
   styleUrls: ['./todoList.component.scss']
 })

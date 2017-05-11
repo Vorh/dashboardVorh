@@ -1,15 +1,13 @@
-<div id="panelTodo">
-  <panel-todo [todoList]="todoList"></panel-todo>
-</div>
+
 <ul class="toDoList">
-  <li *ngFor="let todo of todoList"
-      >
+  <li *ngFor="let todo of todoList">
     <div class="checkbox-root">
-    <input [checked]="todo.complete" id="checkbox-{{todo.id}}"  class="checkbox-custom"
-          [(ngModel)]="todo.complete" type="checkbox" (click)="completeTodo(todo)">
-    <label for="checkbox-{{todo.id}}" ><span class="checkbox"></span> </label>
+      <input [checked]="todo.complete" id="checkbox-{{todo.id}}" class="checkbox-custom"
+             [(ngModel)]="todo.complete" type="checkbox" (click)="completeTodo(todo)">
+      <label for="checkbox-{{todo.id}}"><span class="checkbox"></span> </label>
     </div>
-    <div  class="todo" tabindex="1" id="todo-{{todo.id}}" [class.selected]="todo.select" (focus)="selectTodo(todo)" (blur)="blurTodo(todo)">
+    <div class="todo" tabindex="1" id="todo-{{todo.id}}" [class.selected]="todo.select" (focus)="selectTodo(todo)"
+         (blur)="blurTodo(todo)">
       <input disabled [(ngModel)]="todo.caption" maxlength="250" type="text"
              [class.todo-complete]="todo.complete"/>
       <button (click)="removeTodo(todo)" class="btn-remove fa fa-remove "></button>

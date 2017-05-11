@@ -5,12 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {SideBar} from './components/sideBar/sideBar.component';
-import {TodoList} from './components/todoList/todoList.component';
-import {HeaderTodo} from './components/todoList/headerTodo/headerTodo.component';
-import {PanelTodo} from './components/todoList/panelTodo/panelTodo.component';
+import {TodoList} from './components/todo/todoList/todoList.component';
+import {HeaderTodo} from './components/todo/headerTodo/headerTodo.component';
+import {PanelTodo} from './components/todo/panelTodo/panelTodo.component';
 import {TodoService} from './services/todoService/todoServiceBasic.service';
-import {AddTodo} from "./components/todoList/addTodo/addTodo.component";
+import {AddTodo} from "./components/todo/addTodo/addTodo.component";
 import {ComboBox} from "./components/ui/combobox/combobox.component";
+import {RootTodo} from "./components/todo/todo.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {ComboBox} from "./components/ui/combobox/combobox.component";
     PanelTodo,
     AddTodo,
     ComboBox,
+    RootTodo
   ],
   imports: [
     BrowserModule,

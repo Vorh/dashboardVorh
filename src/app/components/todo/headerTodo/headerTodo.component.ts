@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Observable, Subscriber, Subscription} from "rxjs";
 
 @Component({
-  selector: 'app-header-todo',
+  selector: 'header-todo',
   templateUrl: './headerTodo.component.html',
   styleUrls: ['./headerTodo.component.scss']
 })

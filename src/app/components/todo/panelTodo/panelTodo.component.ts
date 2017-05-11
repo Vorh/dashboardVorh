@@ -10,8 +10,6 @@ export class PanelTodo implements OnInit {
 
   @Input() todoList: Todo[];
 
-  time:String;
-
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,73 @@
+#sidebar {
+  height: 100%;
+  float: left;
+  width: 200px;
+  top: 50px;
+  position: fixed;
+  background-color: #354052;
+  padding-top: 10px;
+  transition: 0.5s;
+  color: #a0abbe; }
+  #sidebar h3 {
+    text-transform: uppercase;
+    color: #85888d;
+    font-weight: 200;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding-left: 32px;
+    padding-bottom: 10px;
+    padding-top: 10px; }
+  #sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer; }
+  #sidebar a:hover {
+    background-color: #2f3949;
+    color: #cccfd3; }
+  #sidebar a:hover {
+    color: #f1f1f1; }
+
+.sidebarStatus {
+  float: right;
+  border-radius: 15px;
+  cursor: pointer;
+  color: beige;
+  box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.16);
+  background-color: #f1495b;
+  padding: 0px 15px 0px 15px; }
+
+.flip-container {
+  perspective: 1000px;
+  float: right; }
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg); }
+
+#sidebar a:hover .flipper, #sidebar a.hover .flipper {
+  transform: rotateY(180deg); }
+
+.flipper {
+  float: right;
+  transition: 0.5s;
+  transform-style: preserve-3d; }
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0; }
+
+.front {
+  position: absolute;
+  z-index: 2;
+  right: 10px; }
+
+.back {
+  left: 6px;
+  position: absolute;
+  transform: rotateY(180deg); }
+
+/*# sourceMappingURL=sideBar.component.css.map */
