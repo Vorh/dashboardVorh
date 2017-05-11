@@ -10,6 +10,7 @@ import {HeaderTodo} from './components/todoList/headerTodo/headerTodo.component'
 import {PanelTodo} from './components/todoList/panelTodo/panelTodo.component';
 import {TodoService} from './services/todoService/todoServiceBasic.service';
 import {AddTodo} from "./components/todoList/addTodo/addTodo.component";
+import {ComboBox} from "./components/ui/combobox/combobox.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {AddTodo} from "./components/todoList/addTodo/addTodo.component";
     TodoList,
     HeaderTodo,
     PanelTodo,
-    AddTodo
+    AddTodo,
+    ComboBox,
   ],
   imports: [
     BrowserModule,

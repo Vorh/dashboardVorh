@@ -1,0 +1,10 @@
+<div class="dropdown">
+  <input class="selected" type="text">
+<button class="btn-drop" (click)="show(true)" (blur)="show(false)"></button>
+  <div id="test" class="content">
+    <span *ngFor="let item of items" (click)="item.select()">{{item.getValue()}}</span>
+    <span>value 1</span>
+    <span>value 2</span>
+    <span>value 3</span>
+  </div>
+</div>
