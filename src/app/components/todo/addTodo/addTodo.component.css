@@ -7,7 +7,10 @@
   border: none;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 1px 1px 2px #000000; }
+  box-shadow: 1px 1px 2px #000000;
+  height: 35px;
+  width: 45px;
+  transition: 0.3s; }
 
 #btnOpenModal:hover {
   background: #3cb0fd; }
