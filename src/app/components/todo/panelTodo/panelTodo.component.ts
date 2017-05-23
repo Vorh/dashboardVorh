@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterContentInit, Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Todo} from "../../../models/todo";
 
 @Component({
@@ -6,15 +6,18 @@ import {Todo} from "../../../models/todo";
   templateUrl: './panelTodo.component.html',
   styleUrls: ['./panelTodo.component.scss']
 })
-export class PanelTodo implements OnInit {
+export class PanelTodo implements OnChanges {
 
   @Input() todoList: Todo[];
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
+  filterTypeTodo(type:String){
+    this.todoList.filter((value, index, array) => {
+
+    });
+  }
 
 
 }

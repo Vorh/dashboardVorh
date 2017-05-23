@@ -10,7 +10,10 @@
   box-shadow: 1px 1px 2px #000000;
   height: 35px;
   width: 45px;
-  transition: 0.3s; }
+  transition: 0.3s;
+  display: block;
+  float: left;
+  margin-right: 10px; }
 
 #btnOpenModal:hover {
   background: #3cb0fd; }

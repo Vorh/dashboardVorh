@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -10,23 +10,15 @@ import {AppSetting} from "../../../app.setting";
   templateUrl: './todoList.component.html',
   styleUrls: ['./todoList.component.scss']
 })
-export class TodoList implements OnInit {
+export class TodoList {
 
+  @Input()
   todoList: Todo[];
 
   constructor(private todoService: TodoService) {
   }
 
-  ngOnInit() {
-    this.todoService.getListToDo().subscribe(item => {
-      let sort = item.sort((a, b) => {
-        if (a.date > b.date) return-1;
-        if (a.date < b.date) return 1;
-        return 0;
-      });
-      this.todoList = sort;
-    });
-  }
+
 
 
   removeTodo(todo: Todo) {
