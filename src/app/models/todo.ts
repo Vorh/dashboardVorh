@@ -1,9 +1,10 @@
+import {TypeTodo} from "./typeTodo";
 export class Todo {
   private _id: number;
   private _caption: string;
   private _content: string;
   private _complete: boolean;
-  private _type: number;
+  private _type: TypeTodo;
   private _date: number;
   private _select:boolean;
 
@@ -25,11 +26,11 @@ export class Todo {
   }
 
 
-  get type(): number {
+  get type(): TypeTodo{
     return this._type;
   }
 
-  set type(value: number) {
+  set type(value: TypeTodo) {
     this._type = value;
   }
 
