@@ -1,3 +1,4 @@
+
 import {TypeTodo} from "./typeTodo";
 export class Todo {
   private _id: number;
@@ -8,6 +9,15 @@ export class Todo {
   private _date: number;
   private _select:boolean;
 
+
+  static getTypeTodo(id:number):TypeTodo{
+      switch (id){
+        case 1:
+          return TypeTodo.EVERY_DAY;
+        case 2:
+          return TypeTodo.END_DATE;
+      }
+  }
 
   get select(): boolean {
     return this._select;

@@ -25,7 +25,7 @@ export class TodoService {
           tempTodo.caption = temp.caption;
           tempTodo.id = temp.id;
           tempTodo.complete = temp.complete;
-          tempTodo.type = temp.type;
+          tempTodo.type = Todo.getTypeTodo(temp.type);
 
           tempTodo.date = temp.date;
           deeds[i] = tempTodo;
