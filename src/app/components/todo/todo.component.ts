@@ -5,6 +5,8 @@ import {Component, OnInit} from "@angular/core";
 import {TodoService} from "../../services/todoService/todoServiceBasic.service";
 import {TodoList} from "./todoList/todoList.component";
 import {Todo} from "../../models/todo";
+import {FilterTodo} from "../../models/filterTodo";
+import {TypeTodo} from "../../models/typeTodo";
 @Component ({
   selector: "root-todo",
   templateUrl: "./todo.component.html",
@@ -15,6 +17,7 @@ import {Todo} from "../../models/todo";
 export class RootTodo implements OnInit{
 
   todoList:Todo[];
+  typeTodoList:FilterTodo[];
 
   constructor(private todoService:TodoService) {
   }
@@ -28,8 +31,24 @@ export class RootTodo implements OnInit{
       });
       this.todoList = sort;
     });
+
+    this.createFilterTodo();
   }
 
+  private createFilterTodo(){
+    this.typeTodoList = [];
+
+    let everyTodo = new FilterTodo();
+    everyTodo.type =TypeTodo.EVERY_DAY;
+    everyTodo.name = "Every Day";
+
+    let test = new FilterTodo();
+    test.type =TypeTodo.END_DATE;
+    test.name = "Test";
+
+    this.typeTodoList.push(test);
+    this.typeTodoList.push(everyTodo);
+  }
 
 
 }

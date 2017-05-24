@@ -2,9 +2,6 @@
   <input class="selected" type="text">
   <button class="btn-drop" (click)="show(true)" (blur)="show(false)"></button>
   <div id="test" class="content">
-    <span *ngFor="let item of items" (click)="item.select()">{{item.getValue()}}</span>
-    <span>EveryDay</span>
-    <span>Important</span>
-    <span>Today</span>
+    <span *ngFor="let item of items" (click)="select()">{{item.getValue()}}</span>
   </div>
 </div>

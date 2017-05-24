@@ -12,13 +12,15 @@ import {TypeTodo} from "../../../models/typeTodo";
 export class PanelTodo {
 
   @Input() todoList: Todo[];
+
+  @Input() filtersTypeTodo: FilterTodo[];
   primaryTodoList: Todo[];
 
   constructor() { }
 
 
   filterTypeTodo(filter: TypeTodo){
-    let filterTodoList = new Array<Todo>();
+    let filterTodoList = [];
 
     for(let todo of this.todoList){
       if (todo.type == filter){

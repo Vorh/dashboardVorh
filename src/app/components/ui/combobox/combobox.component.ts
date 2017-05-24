@@ -5,7 +5,7 @@ import {Component, Input, OnInit} from "@angular/core";
   templateUrl: './combobox.component.html',
   styleUrls: ['./combobox.component.scss']
 })
-export class ComboBox implements OnInit {
+export abstract class ComboBox implements OnInit {
 
   @Input() items: Item[];
 
@@ -22,9 +22,11 @@ export class ComboBox implements OnInit {
     }
   }
 
+  abstract select(item:Item);
+
 }
 
-interface Item {
+export  interface Item {
   select();
   getValue(): string;
 }
