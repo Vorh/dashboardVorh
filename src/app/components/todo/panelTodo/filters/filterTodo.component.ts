@@ -13,11 +13,14 @@ import {Todo} from "../../../../models/todo";
 })
 
 
-export class FilterTodo extends ComboBox {
+export class FilterTodoComboBox extends ComboBox{
 
+  constructor(){
+    super();
+  }
 
   select(item: Item) {
-
+    alert(item.getValue());
   }
 
 
