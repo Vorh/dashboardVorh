@@ -1,73 +1,41 @@
-#sidebar {
-  height: 100%;
-  float: left;
-  width: 200px;
-  top: 50px;
-  position: fixed;
-  background-color: #354052;
-  padding-top: 10px;
-  transition: 0.5s;
-  color: #a0abbe; }
-  #sidebar h3 {
-    text-transform: uppercase;
-    color: #85888d;
-    font-weight: 200;
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin: 0;
-    padding-left: 32px;
-    padding-bottom: 10px;
-    padding-top: 10px; }
-  #sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    transition: 0.3s;
-    cursor: pointer; }
-  #sidebar a:hover {
-    background-color: #2f3949;
-    color: #cccfd3; }
-  #sidebar a:hover {
-    color: #f1f1f1; }
+/*
+Error: Invalid CSS after "$color-item ": expected ":", was "= #a0abbe;"
+        on line 1 of sideBar.component.scss
 
-.sidebarStatus {
-  float: right;
-  border-radius: 15px;
-  cursor: pointer;
-  color: beige;
-  box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.16);
-  background-color: #f1495b;
-  padding: 0px 15px 0px 15px; }
+1: $color-item = #a0abbe;
+2: 
+3: 
+4: #sidebar {
+5:   height: 100%;
+6:   float: left;
 
-.flip-container {
-  perspective: 1000px;
-  float: right; }
-
-.flip-container:hover .flipper, .flip-container.hover .flipper {
-  transform: rotateY(180deg); }
-
-#sidebar a:hover .flipper, #sidebar a.hover .flipper {
-  transform: rotateY(180deg); }
-
-.flipper {
-  float: right;
-  transition: 0.5s;
-  transform-style: preserve-3d; }
-
-.front, .back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0; }
-
-.front {
-  position: absolute;
-  z-index: 2;
-  right: 10px; }
-
-.back {
-  left: 6px;
-  position: absolute;
-  transform: rotateY(180deg); }
-
-/*# sourceMappingURL=sideBar.component.css.map */
+Backtrace:
+sideBar.component.scss:1
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:628:in `variable'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:674:in `block_contents'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/plugin.rb:82:in `update_stylesheets'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+/home/vorh/.gem/ruby/2.4.0/gems/sass-3.4.23/bin/scss:13:in `<top (required)>'
+/home/vorh/.gem/ruby/2.4.0/bin/scss:22:in `load'
+/home/vorh/.gem/ruby/2.4.0/bin/scss:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"$color-item \": expected \":\", was \"= #a0abbe;\"\A         on line 1 of sideBar.component.scss\A \A 1: $color-item = #a0abbe;\A 2: \A 3: \A 4: #sidebar {\A 5:   height: 100%;\A 6:   float: left;"; }

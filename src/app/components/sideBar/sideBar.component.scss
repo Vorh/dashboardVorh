@@ -1,3 +1,6 @@
+$color-item = #a0abbe;
+
+
 #sidebar {
   height: 100%;
   float: left;
@@ -7,7 +10,7 @@
   background-color: #354052;
   padding-top: 10px;
   transition: 0.5s;
-  color: #a0abbe;
+  color: $color-item;
 
   h3 {
     text-transform: uppercase;
@@ -29,6 +32,9 @@
     transition: 0.3s;
     cursor: pointer;
 
+    &:visited {
+      color: $color-item;
+    }
   }
 
   a:hover {
