@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'side-bar',
-  templateUrl: './sideBar.component.html',
-  styleUrls: ['./sideBar.component.scss']
+  templateUrl: 'sideBar.component.html',
+  styleUrls: ['sideBar.component.scss']
 })
 export class SideBar implements OnInit {
 
@@ -11,5 +11,8 @@ export class SideBar implements OnInit {
 
   ngOnInit() {
   }
+
+  display(numberLayout:number){
+}
 
 }
