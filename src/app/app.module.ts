@@ -14,6 +14,11 @@ import {AddTodo} from "./components/todo/addTodo/addTodo.component";
 import {RootTodo} from "./components/todo/todo.component";
 import {FilterTodoComboBox} from "./components/todo/panelTodo/filters/filterTodo.component";
 import {ComboBox} from "./components/ui/combobox/combobox.component";
+import {RouterModule, Routes} from "@angular/router";
+import {CalendarLayout} from "./components/calendar/calendar-layout.component";
+import {AppRoutingModule} from "./app-routing-module";
+
+
 
 @NgModule({
   declarations: [
@@ -24,15 +29,25 @@ import {ComboBox} from "./components/ui/combobox/combobox.component";
     PanelTodo,
     AddTodo,
     RootTodo,
+    CalendarLayout,
     FilterTodoComboBox,
     ComboBox
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+
+export class AppModule {
+
+
+
+
+}
