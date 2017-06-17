@@ -17,6 +17,7 @@ import {ComboBox} from "./components/ui/combobox/combobox.component";
 import {RouterModule, Routes} from "@angular/router";
 import {CalendarLayout} from "./components/calendar/calendar-layout.component";
 import {AppRoutingModule} from "./app-routing-module";
+import {Calendar} from "./components/calendar/calendar/calendar";
 
 
 
@@ -30,6 +31,7 @@ import {AppRoutingModule} from "./app-routing-module";
     AddTodo,
     RootTodo,
     CalendarLayout,
+    Calendar,
     FilterTodoComboBox,
     ComboBox
   ],

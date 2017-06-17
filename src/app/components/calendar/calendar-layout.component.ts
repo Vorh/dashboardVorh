@@ -11,4 +11,13 @@ import {Component} from "@angular/core";
 
 export class CalendarLayout {
 
+
+
+  constructor() {
+    let date = new Date();
+    alert(date.getFullYear());
+
+
+  }
 }
+
