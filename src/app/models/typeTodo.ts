@@ -4,6 +4,6 @@
 
 export const enum TypeTodo {
   EVERY_DAY= 1,
-  END_DATE = 2
+  DATE = 2
 }
 

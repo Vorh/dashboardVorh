@@ -43,7 +43,7 @@ export class RootTodo implements OnInit{
     everyTodo.name = "Every Day";
 
     let test = new FilterTodo();
-    test.type =TypeTodo.END_DATE;
+    test.type =TypeTodo.DATE;
     test.name = "Test";
 
     this.typeTodoList.push(test);

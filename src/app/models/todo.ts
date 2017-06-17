@@ -15,7 +15,7 @@ export class Todo {
         case 1:
           return TypeTodo.EVERY_DAY;
         case 2:
-          return TypeTodo.END_DATE;
+          return TypeTodo.DATE;
       }
   }
 
