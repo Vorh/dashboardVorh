@@ -1,15 +1,4 @@
 <div class="root">
-  <calendar [name]="wwwwwwww"></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
-  <calendar></calendar>
+  <calendar *ngFor="let month of months" [month]="month"></calendar>
 </div>
 

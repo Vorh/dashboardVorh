@@ -18,6 +18,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {CalendarLayout} from "./components/calendar/calendar-layout.component";
 import {AppRoutingModule} from "./app-routing-module";
 import {Calendar} from "./components/calendar/calendar/calendar";
+import {CalendarCell} from "./components/calendar/calendar/calendar-cell/calendar-cell";
 
 
 
@@ -32,6 +33,7 @@ import {Calendar} from "./components/calendar/calendar/calendar";
     RootTodo,
     CalendarLayout,
     Calendar,
+    CalendarCell,
     FilterTodoComboBox,
     ComboBox
   ],

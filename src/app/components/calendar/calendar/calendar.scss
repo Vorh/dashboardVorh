@@ -28,8 +28,6 @@
       line-height: 34px;
     }
 
-
-
     .button {
       width: 24px;
       text-align: center;
@@ -89,7 +87,7 @@
   }
 
   .cal-frame {
-
+    display: table;
     td.today {
       background: #ededed;
       color: #8c8c8c;
@@ -119,10 +117,10 @@
     }
 
     table.curr {
-      float:left;
+      float: left;
     }
     table.temp {
-      position:absolute;
+      position: absolute;
     }
   }
 }
