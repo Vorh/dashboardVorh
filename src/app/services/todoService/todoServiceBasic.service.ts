@@ -16,22 +16,26 @@ export class TodoService {
   getListToDo(): Observable<Todo[]> {
     return this.http.get(AppSetting.URL + '/todo/list')
       .map(response => {
-        const any = response.json();
-        const deeds: Todo[] = [];
-        for (let i = 0; i < any.length; i++) {
-          const temp = any[i];
-
-          const tempTodo = new Todo();
-          tempTodo.caption = temp.caption;
-          tempTodo.id = temp.id;
-          tempTodo.complete = temp.complete;
-          tempTodo.type = Todo.getTypeTodo(temp.type);
-
-          tempTodo.date = temp.date;
-          deeds[i] = tempTodo;
-        }
-        return deeds;
+        return TodoService.createTodoFromJson(response);
       });
+  }
+
+  private static createTodoFromJson(response) {
+    const any = response.json();
+    const deeds: Todo[] = [];
+    for (let i = 0; i < any.length; i++) {
+      const temp = any[i];
+
+      const tempTodo = new Todo();
+      tempTodo.caption = temp.caption;
+      tempTodo.id = temp.id;
+      tempTodo.complete = temp.complete;
+      tempTodo.type = Todo.getTypeTodo(temp.type);
+
+      tempTodo.date = temp.date;
+      deeds[i] = tempTodo;
+    }
+    return deeds;
   }
 
   addToDo(todo: Todo) {
@@ -44,9 +48,9 @@ export class TodoService {
       method: RequestMethod.Post,
       url: url,
       headers: header,
-      body: this.formatterTodo(todo)
+      body: TodoService.formatterTodo(todo)
     });
-    console.log(this.formatterTodo(todo));
+    console.log(TodoService.formatterTodo(todo));
     this.http.request(url,request).subscribe()
   }
 
@@ -73,7 +77,14 @@ export class TodoService {
   }
 
 
-  formatterTodo(todo:Todo):String{
+  getListTodo(year:number): Observable<Todo[]>{
+    return this.http.get(AppSetting.URL + '/todo/list?type=date&year=' + year)
+      .map(response =>{
+        return TodoService.createTodoFromJson(response);
+      })
+  }
+
+  static formatterTodo(todo:Todo):String{
     let tempJson = JSON.stringify(todo);
     return tempJson.replace(/_/g,"");
   }
