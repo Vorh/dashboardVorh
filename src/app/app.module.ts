@@ -15,10 +15,9 @@ import {RootTodo} from "./components/todo/todo.component";
 import {FilterTodoComboBox} from "./components/todo/panelTodo/filters/filterTodo.component";
 import {ComboBox} from "./components/ui/combobox/combobox.component";
 import {RouterModule, Routes} from "@angular/router";
-import {CalendarLayout} from "./components/calendar/calendar-layout.component";
 import {AppRoutingModule} from "./app-routing-module";
-import {Calendar} from "./components/calendar/calendar/calendar";
-import {CalendarCell} from "./components/calendar/calendar/calendar-cell/calendar-cell";
+import {Calendar} from "./components/calendar/calendar";
+import {CalendarCell} from "./components/calendar/calendar-cell/calendar-cell";
 
 
 
@@ -31,7 +30,6 @@ import {CalendarCell} from "./components/calendar/calendar/calendar-cell/calenda
     PanelTodo,
     AddTodo,
     RootTodo,
-    CalendarLayout,
     Calendar,
     CalendarCell,
     FilterTodoComboBox,

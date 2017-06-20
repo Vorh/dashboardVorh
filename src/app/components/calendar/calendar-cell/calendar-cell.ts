@@ -1,0 +1,20 @@
+
+
+import {Component, Input} from "@angular/core";
+import {CalCellObject} from "../../../models/CalCellObject";
+@Component({
+  selector:'calendar-cell',
+  styleUrls: ['calendar-cell.scss'],
+  templateUrl: 'calendar-cell.html'
+})
+
+export class CalendarCell {
+
+
+  @Input()
+  callCell:CalCellObject;
+
+
+  constructor() {
+  }
+}
