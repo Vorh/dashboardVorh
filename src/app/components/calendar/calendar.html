@@ -1,36 +1,33 @@
 <div class="calendar">
-  <div class="header">
-
+  <div class="cal-year">
+    <div class="left button"> &lang;</div>
+    <div class="year-month">{{year}}</div>
+    <div class="right button">&rang;</div>
   </div>
-
+  <div class="cal-head">
+    <div>Sunday</div>
+    <div>Monday</div>
+    <div>Tuesday</div>
+    <div>Wednesday</div>
+    <div>Thursday</div>
+    <div>Friday</div>
+    <div>Saturday</div>
+  </div>
   <div class="cal-frame">
-    <tbody class="cal-tbody">
-    <thead>
-  <tr>
-    <th>sun</th>
-    <th>mon</th>
-    <th>tue</th>
-    <th>wed</th>
-    <th>thu</th>
-    <th>fri</th>
-    <th>sat</th>
-  </tr>
-  </thead>
-    <tr>
-      <td *ngFor="let cell of getCell(1,8)"><calendar-cell [callCell]="cell"></calendar-cell></td>
-    </tr>
-    <tr>
-      <td *ngFor="let cell of getCell(8,15)"><calendar-cell [callCell]="cell"></calendar-cell></td>
-    </tr>
-    <tr>
-      <td *ngFor="let cell of getCell(15,22)"><calendar-cell [callCell]="cell"></calendar-cell></td>
-    </tr>
-    <tr>
-      <td *ngFor="let cell of getCell(22,29)"><calendar-cell [callCell]="cell"></calendar-cell></td>
-    </tr>
-    <tr>
-      <td *ngFor="let cell of getCell(27,34)"><calendar-cell [callCell]="cell"></calendar-cell></td>
-    </tr>
-    </tbody>
+    <div *ngFor="let cell of getCell(1,8)">
+      <calendar-cell [callCell]="cell"></calendar-cell>
+    </div>
+    <div *ngFor="let cell of getCell(8,15)">
+      <calendar-cell [callCell]="cell"></calendar-cell>
+    </div>
+    <div *ngFor="let cell of getCell(15,22)">
+      <calendar-cell [callCell]="cell"></calendar-cell>
+    </div>
+    <div *ngFor="let cell of getCell(22,29)">
+      <calendar-cell [callCell]="cell"></calendar-cell>
+    </div>
+    <div *ngFor="let cell of getCell(27,34)">
+      <calendar-cell [callCell]="cell"></calendar-cell>
+    </div>
   </div>
 </div>

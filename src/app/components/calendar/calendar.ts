@@ -9,7 +9,7 @@ import {CalCellObject} from "../../models/CalCellObject";
 @Component({
   selector: 'calendar',
   templateUrl: 'calendar.html',
-  styleUrls: ['calendar.scss']
+  styleUrls: ['_calendar.scss']
 })
 
 export class Calendar implements OnInit {
@@ -18,32 +18,34 @@ export class Calendar implements OnInit {
   @Input()
   month: Month;
 
+  @Input()
+  year: number;
+
   cells: CalCellObject[] = [];
 
 
   ngOnInit(): void {
-    for (let i = 1; i < 38; i++){
+    for (let i = 1; i < 38; i++) {
       let object = new CalCellObject();
       object.day = i;
-      this.cells[i]= object;
+      this.cells[i] = object;
     }
 
+    this.year= new Date().getFullYear();
 
 
   }
 
 
-  getCell(start:number , end:number){
+  getCell(start: number, end: number) {
     let tempCell = [];
     let count = 0;
-    for (;start != end; start++){
+    for (; start != end; start++) {
       tempCell[count] = this.cells[start];
       count++;
     }
     return tempCell;
   }
-
-
 
 
 }
