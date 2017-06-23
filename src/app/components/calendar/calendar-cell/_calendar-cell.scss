@@ -1,22 +1,22 @@
-$size-cell: 110px;
+$width-cell: 140px;
+$height-cell: 80px;
 
 .cell {
-  background: #616cb5;
-  width: $size-cell;
-  margin-top: 10px;
-  height: $size-cell;
+  background:#00BCD4;
+  width: $width-cell;
+  height: $height-cell;
   float: left;
   display: block;
   color: white;
-  border-radius: 3px;
+  //border-radius: 3px;
   border: 1px solid #2f3949;
 
-  .null {
-    background: #4CAF50;
+  &.null {
+    background: #009688;
   }
 
-  .todo {
-    background: #8C9EFF;
+  &.todo {
+    background: #03A9F4;
   }
 
 }

@@ -1,7 +1,8 @@
 $width-cell: 110px;
+$height-cell: 40px;
 
 .calendar {
-  margin-left: 150px;
+  margin-left: 60px;
 
   .left {
     float: left;
@@ -22,7 +23,7 @@ $width-cell: 110px;
     .row-dayWeek td {
       width: $width-cell;
       text-align: center;
-      height: 40px;
+      height: $height-cell;
       background: #673AB7;
       border: 1px solid #222125;
     }

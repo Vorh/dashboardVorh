@@ -74,6 +74,11 @@ export class Calendar implements OnInit {
     console.log("Year " + date.getFullYear());
     console.log('Days of month ' + daysOfMonth);
     console.log('Count cell ' + this.cells.length);
+
+    this.cells[15].isTodo = true;
+    this.cells[25].isTodo = true;
+    this.cells[5].isTodo = true;
+
   }
 
 

@@ -8,10 +8,22 @@ export class CalCellObject {
 
   private _day:number;
   private _isDayPreviousMonth;
+  private _isTodo;
+
+
 
 
   constructor() {
     this.isDayPreviousMonth = false;
+  }
+
+
+  get isTodo() {
+    return this._isTodo;
+  }
+
+  set isTodo(value) {
+    this._isTodo = value;
   }
 
   get isDayPreviousMonth() {
