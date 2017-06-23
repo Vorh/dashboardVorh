@@ -1,49 +1,30 @@
 $width-cell: 110px;
 
 .calendar {
-  width: 70%;
   margin-left: 150px;
-  display: inline-block;
-  .cal-year {
 
-    div {
-      display: block;
-      float: left;
-      background: #00BCD4;
-    }
-
-
-    .button {
-    }
-
-    .left {
-    }
-    .right {
-    }
-
-    .year-month {
-      width: 90%;
-      text-align: center;
-    }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
   }
 
-  .cal-head  {
-    div {
-      float: left;
-      display: block;
+  .button {
+    cursor: pointer;
+  }
+
+  .year-month {
+    text-align: center;
+  }
+
+  .cal-table {
+    .row-dayWeek td {
       width: $width-cell;
       text-align: center;
       height: 40px;
       background: #673AB7;
       border: 1px solid #222125;
     }
-
   }
-
-  .cal-frame {
-    div {
-      display: inline-block;
-    }
-  }
-
 }

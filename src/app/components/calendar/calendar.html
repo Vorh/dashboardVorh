@@ -1,33 +1,44 @@
 <div class="calendar">
-  <div class="cal-year">
-    <div class="left button"> &lang;</div>
-    <div class="year-month">{{year}}</div>
-    <div class="right button">&rang;</div>
+
+    <table class="cal-table" cellspacing="5">
+      <tr>
+        <td  class="left button"> &lang;</td>
+        <td colspan="5" class="year-month">{{year}}</td>
+        <td  class="right button">&rang;</td>
+      </tr>
+      <tr class="row-dayWeek">
+        <td>Sunday</td>
+        <td>Monday</td>
+        <td>Tuesday</td>
+        <td>Wednesday</td>
+        <td>Thursday</td>
+        <td>Friday</td>
+        <td>Saturday</td>
+      </tr>
+    <tr>
+      <td *ngFor="let cell of getCell(1,8)">
+        <calendar-cell [callCell]="cell"></calendar-cell>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let cell of getCell(8,15)">
+        <calendar-cell [callCell]="cell"></calendar-cell>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let cell of getCell(15,22)">
+        <calendar-cell [callCell]="cell"></calendar-cell>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let cell of getCell(22,29)">
+        <calendar-cell [callCell]="cell"></calendar-cell>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let cell of getCell(27,34)">
+        <calendar-cell [callCell]="cell"></calendar-cell>
+      </td>
+    </tr>
+    </table>
   </div>
-  <div class="cal-head">
-    <div>Sunday</div>
-    <div>Monday</div>
-    <div>Tuesday</div>
-    <div>Wednesday</div>
-    <div>Thursday</div>
-    <div>Friday</div>
-    <div>Saturday</div>
-  </div>
-  <div class="cal-frame">
-    <div *ngFor="let cell of getCell(1,8)">
-      <calendar-cell [callCell]="cell"></calendar-cell>
-    </div>
-    <div *ngFor="let cell of getCell(8,15)">
-      <calendar-cell [callCell]="cell"></calendar-cell>
-    </div>
-    <div *ngFor="let cell of getCell(15,22)">
-      <calendar-cell [callCell]="cell"></calendar-cell>
-    </div>
-    <div *ngFor="let cell of getCell(22,29)">
-      <calendar-cell [callCell]="cell"></calendar-cell>
-    </div>
-    <div *ngFor="let cell of getCell(27,34)">
-      <calendar-cell [callCell]="cell"></calendar-cell>
-    </div>
-  </div>
-</div>
