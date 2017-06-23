@@ -1,44 +1,50 @@
 <div class="calendar">
 
-    <table class="cal-table" cellspacing="5">
-      <tr>
-        <td  class="left button"> &lang;</td>
-        <td colspan="5" class="year-month">{{year}}</td>
-        <td  class="right button">&rang;</td>
-      </tr>
-      <tr class="row-dayWeek">
-        <td>Sunday</td>
-        <td>Monday</td>
-        <td>Tuesday</td>
-        <td>Wednesday</td>
-        <td>Thursday</td>
-        <td>Friday</td>
-        <td>Saturday</td>
-      </tr>
+  <table class="cal-table" cellspacing="5">
     <tr>
-      <td *ngFor="let cell of getCell(1,8)">
+      <td class="left button">
+        <button (click)="changeYearOrMonth(3)"><<</button>
+        <button (click)="changeYearOrMonth(4)"><</button>
+      </td>
+      <td colspan="5" class="year-month">{{currentYear}} {{month.name}}</td>
+      <td class="right button">
+        <button (click)="changeYearOrMonth(2)">></button>
+        <button (click)="changeYearOrMonth(1)">>></button>
+      </td>
+    </tr>
+    <tr class="row-dayWeek">
+      <td>Sunday</td>
+      <td>Monday</td>
+      <td>Tuesday</td>
+      <td>Wednesday</td>
+      <td>Thursday</td>
+      <td>Friday</td>
+      <td>Saturday</td>
+    </tr>
+    <tr>
+      <td *ngFor="let cell of getCell(0,7)">
         <calendar-cell [callCell]="cell"></calendar-cell>
       </td>
     </tr>
     <tr>
-      <td *ngFor="let cell of getCell(8,15)">
+      <td *ngFor="let cell of getCell(7,14)">
         <calendar-cell [callCell]="cell"></calendar-cell>
       </td>
     </tr>
     <tr>
-      <td *ngFor="let cell of getCell(15,22)">
+      <td *ngFor="let cell of getCell(14,21)">
         <calendar-cell [callCell]="cell"></calendar-cell>
       </td>
     </tr>
     <tr>
-      <td *ngFor="let cell of getCell(22,29)">
+      <td *ngFor="let cell of getCell(21,28)">
         <calendar-cell [callCell]="cell"></calendar-cell>
       </td>
     </tr>
     <tr>
-      <td *ngFor="let cell of getCell(27,34)">
+      <td *ngFor="let cell of getCell(28,35)">
         <calendar-cell [callCell]="cell"></calendar-cell>
       </td>
     </tr>
-    </table>
-  </div>
+  </table>
+</div>

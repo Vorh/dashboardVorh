@@ -1,7 +1,7 @@
 
 
 import {Component, Input} from "@angular/core";
-import {CalCellObject} from "../../../models/CalCellObject";
+import {CalCellObject} from "../../../models/calendar/CalCellObject";
 @Component({
   selector:'calendar-cell',
   styleUrls: ['_calendar-cell.scss'],

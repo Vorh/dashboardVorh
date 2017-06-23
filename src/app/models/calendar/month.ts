@@ -1,4 +1,4 @@
-import {Todo} from "./todo";
+import {Todo} from "../todo";
 /**
  * Created by vorh on 6/17/17.
  */
