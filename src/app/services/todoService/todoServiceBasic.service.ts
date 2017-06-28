@@ -5,6 +5,8 @@ import 'rxjs/add/operator/toPromise';
 import {AppSetting} from '../../app.setting';
 import {Observable} from "rxjs";
 import 'rxjs/add/operator/catch';
+import {TypeTodo} from "../../models/typeTodo";
+import {type} from "os";
 
 @Injectable()
 export class TodoService {
@@ -77,10 +79,10 @@ export class TodoService {
   }
 
 
-  getListTodo(year:number): Observable<Todo[]>{
-    return this.http.get(AppSetting.URL + '/todo/list?type=date&year=' + year)
-      .map(response =>{
-        return TodoService.createTodoFromJson(response);
+  getListTodo(year:number, typeTodo:TypeTodo){
+    return this.http.get(AppSetting.URL + '/todo/list?type=' + typeTodo + "&year=" + year)
+      .map(resp=> {
+        return TodoService.createTodoFromJson(resp);
       })
   }
 

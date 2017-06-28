@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {Month} from "../../models/calendar/month";
+import {Month} from "../../models/calendar/Month";
 import {CalCellObject} from "../../models/calendar/CalCellObject";
+import {TodoService} from "../../services/todoService/todoServiceBasic.service";
+import {TypeTodo} from "../../models/typeTodo";
+import {Todo} from "../../models/todo";
 /**
  * Created by vorh on 6/17/17.
  */
@@ -14,20 +17,30 @@ import {CalCellObject} from "../../models/calendar/CalCellObject";
 
 export class Calendar implements OnInit {
 
+
   monthNames: string[] = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
 
   month: Month;
+
+
+
   currentYear: number;
   currentMonth: number;
 
   cells: CalCellObject[] = [];
 
 
+  constructor(private todoService:TodoService) {
+  }
+
   ngOnInit(): void {
 
     let date = new Date();
+
+    this.todoService.getListTodo(date.getFullYear(),TypeTodo.DATE)
+      .subscribe();
 
     this.month = new Month();
     this.currentMonth = date.getMonth();
@@ -81,19 +94,36 @@ export class Calendar implements OnInit {
 
   }
 
+  fillMonth(todo:Todo[],date:Date){
 
-//   NEXT_YEAR,1
-//   NEXT_MONTH,2
-//   PREVIOUS_YEAR,3
-//   PREVIOUS_MONTH 4
+    for(let i =0; i < todo.length; i++){
 
-  changeYearOrMonth(type: number) {
+      for (let m = 0; m < 12; m++){
+        date.setMonth(m);
+        let firstDay;
+        let lastDay;
+      }
+
+    }
+  }
+
+  createMonths(year:Date){
+
+  }
+
+
+  NEXT_YEAR:number = 1;
+  NEXT_MONTH:number = 2;
+  PREVIOUS_YEAR:number = 3;
+  PREVIOUS_MONTH:number = 4;
+
+  changeDate(type: number) {
     let date = new Date();
     switch (type) {
-      case 1:
+      case this.NEXT_YEAR:
         this.currentYear +=1;
         break;
-      case 2:
+      case this.NEXT_MONTH:
         if (this.currentMonth + 1 > 11) {
           this.currentYear += 1;
           this.currentMonth = 0;
@@ -101,10 +131,10 @@ export class Calendar implements OnInit {
           this.currentMonth += 1;
         }
         break;
-      case 3:
+      case this.PREVIOUS_YEAR:
         this.currentYear -= 1;
         break;
-      case 4:
+      case this.PREVIOUS_MONTH:
         if (this.currentMonth - 1 <0) {
           this.currentYear -= 1;
           this.currentMonth = 11;
