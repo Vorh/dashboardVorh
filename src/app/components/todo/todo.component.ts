@@ -9,8 +9,8 @@ import {FilterTodo} from "../../models/filterTodo";
 import {TypeTodo} from "../../models/typeTodo";
 @Component ({
   selector: "root-todo",
-  templateUrl: "./todo.component.html",
-  styleUrls: ["./todo.component.scss"]
+  templateUrl: "todo.component.html",
+  styleUrls: ["_todo.component.scss"]
 })
 
 

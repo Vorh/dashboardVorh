@@ -8,8 +8,8 @@ import {Todo} from "../../../../models/todo";
 
 @Component({
   selector: "filter-todo",
-  styleUrls: ["filterTodo.component.scss"],
-  templateUrl: "filterTodo.component.html"
+  templateUrl: "filterTodo.component.html",
+  styleUrls: ["_filterTodo.component.scss"]
 })
 
 

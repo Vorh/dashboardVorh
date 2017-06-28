@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from "@angular/core";
 
 @Component({
   selector: 'combobox',
-  templateUrl: './combobox.component.html',
-  styleUrls: ['./combobox.component.scss']
+  templateUrl: 'combobox.component.html',
+  styleUrls: ['_combobox.component.scss']
 })
 export class ComboBox implements OnInit {
 

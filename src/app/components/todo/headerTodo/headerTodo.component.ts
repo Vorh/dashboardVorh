@@ -3,8 +3,8 @@ import {Observable, Subscriber, Subscription} from "rxjs";
 
 @Component({
   selector: 'header-todo',
-  templateUrl: './headerTodo.component.html',
-  styleUrls: ['./headerTodo.component.scss']
+  templateUrl: 'headerTodo.component.html',
+  styleUrls: ['_headerTodo.component.scss']
 })
 export class HeaderTodo implements OnInit,OnDestroy {
 

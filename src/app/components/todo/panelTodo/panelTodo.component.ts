@@ -6,8 +6,8 @@ import {TypeTodo} from "../../../models/typeTodo";
 
 @Component({
   selector: 'panel-todo',
-  templateUrl: './panelTodo.component.html',
-  styleUrls: ['./panelTodo.component.scss']
+  templateUrl: 'panelTodo.component.html',
+  styleUrls: ['_panelTodo.component.scss']
 })
 export class PanelTodo {
 

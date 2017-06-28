@@ -5,8 +5,8 @@ import {TodoService} from "../../../services/todoService/todoServiceBasic.servic
 
 @Component({
   selector: "add-todo",
-  templateUrl: './addTodo.component.html',
-  styleUrls: ['./addTodo.component.scss']
+  templateUrl: 'addTodo.component.html',
+  styleUrls: ['_addTodo.component.scss']
 })
 export class AddTodo implements OnInit{
 
