@@ -4,6 +4,8 @@ import {CalCellObject} from "../../models/calendar/CalCellObject";
 import {TodoService} from "../../services/todoService/todoServiceBasic.service";
 import {TypeTodo} from "../../models/typeTodo";
 import {Todo} from "../../models/todo";
+import {Year} from "../../models/calendar/Year";
+import {TypeCell} from "../../models/calendar/TypeCell";
 /**
  * Created by vorh on 6/17/17.
  */
@@ -22,17 +24,19 @@ export class Calendar implements OnInit {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  month: Month;
+  currentMonth: Month;
+  currentYear:Year;
 
+  years: Year[]  = [];
 
+  numberYear: number;
+  numberMonth: number;
 
-  currentYear: number;
-  currentMonth: number;
-
-  cells: CalCellObject[] = [];
+  currentCells: CalCellObject[] = [];
 
 
   constructor(private todoService:TodoService) {
+
   }
 
   ngOnInit(): void {
@@ -42,42 +46,43 @@ export class Calendar implements OnInit {
     this.todoService.getListTodo(date.getFullYear(),TypeTodo.DATE)
       .subscribe();
 
-    this.month = new Month();
-    this.currentMonth = date.getMonth();
+    this.currentMonth = new Month();
+    this.numberMonth = date.getMonth();
 
     this.initCalendar(date);
   }
 
   initCalendar(date: Date) {
 
-    this.month.name = this.monthNames[date.getMonth()];
+    this.currentMonth.name = this.monthNames[date.getMonth()];
 
-    this.currentYear = date.getFullYear();
+    this.numberYear = date.getFullYear();
     let month = date.getMonth() + 1;
-    let daysOfMonth = Calendar.getDaysOfMonth(this.currentYear, month);
-    let firstDay = new Date(this.currentYear, month - 1);
-    let lastDay = new Date(this.currentYear, month, 0);
+    let daysOfMonth = Calendar.getDaysOfMonth(this.numberYear, month);
+    let firstDay = new Date(this.numberYear, month - 1);
+    let lastDay = new Date(this.numberYear, month, 0);
 
 
     let numberCell = 0;
     for (; numberCell < firstDay.getDay(); numberCell++) {
       let cell = new CalCellObject();
-      cell.isDayPreviousMonth = true;
-      this.cells[numberCell] = cell;
+      cell.type = TypeCell.PREVIOUS_DAY;
+      this.currentCells[numberCell] = cell;
     }
 
 
     for (let i = 1; i < daysOfMonth + 1; i++) {
       let cell = new CalCellObject();
       cell.day = i;
-      this.cells[numberCell] = cell;
+      cell.type = TypeCell.USUAL;
+      this.currentCells[numberCell] = cell;
       numberCell++;
     }
 
     for (; numberCell < 35; numberCell++) {
       let cell = new CalCellObject();
-      cell.isDayPreviousMonth = true;
-      this.cells[numberCell] = cell;
+      cell.type = TypeCell.PREVIOUS_DAY;
+      this.currentCells[numberCell] = cell;
     }
 
 
@@ -86,11 +91,11 @@ export class Calendar implements OnInit {
     console.log('Month ' + month);
     console.log("Year " + date.getFullYear());
     console.log('Days of month ' + daysOfMonth);
-    console.log('Count cell ' + this.cells.length);
+    console.log('Count cell ' + this.currentCells.length);
 
-    this.cells[15].isTodo = true;
-    this.cells[25].isTodo = true;
-    this.cells[5].isTodo = true;
+    this.currentCells[15].type = TypeCell.TODO;
+    this.currentCells[25].type = TypeCell.TODO;
+    this.currentCells[5].type = TypeCell.TODO;
 
   }
 
@@ -121,29 +126,29 @@ export class Calendar implements OnInit {
     let date = new Date();
     switch (type) {
       case this.NEXT_YEAR:
-        this.currentYear +=1;
+        this.numberYear +=1;
         break;
       case this.NEXT_MONTH:
-        if (this.currentMonth + 1 > 11) {
-          this.currentYear += 1;
-          this.currentMonth = 0;
+        if (this.numberMonth + 1 > 11) {
+          this.numberYear += 1;
+          this.numberMonth = 0;
         } else {
-          this.currentMonth += 1;
+          this.numberMonth += 1;
         }
         break;
       case this.PREVIOUS_YEAR:
-        this.currentYear -= 1;
+        this.numberYear -= 1;
         break;
       case this.PREVIOUS_MONTH:
-        if (this.currentMonth - 1 <0) {
-          this.currentYear -= 1;
-          this.currentMonth = 11;
+        if (this.numberMonth - 1 <0) {
+          this.numberYear -= 1;
+          this.numberMonth = 11;
         } else {
-          this.currentMonth -= 1;
+          this.numberMonth -= 1;
         }
         break;
     }
-    date.setFullYear(this.currentYear, this.currentMonth);
+    date.setFullYear(this.numberYear, this.numberMonth);
     this.initCalendar(date);
   }
 
@@ -157,7 +162,7 @@ export class Calendar implements OnInit {
     let tempCell = [];
     let count = 0;
     for (; start != end; start++) {
-      tempCell[count] = this.cells[start];
+      tempCell[count] = this.currentCells[start];
       count++;
     }
     return tempCell;
